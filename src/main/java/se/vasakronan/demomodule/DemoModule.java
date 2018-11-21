@@ -17,13 +17,15 @@ public class DemoModule extends GatewayModule {
      */
     public DemoModule(long address, Broker broker, String configuration) {
         super(address, broker, configuration);
+
+        System.out.println("MY CUSTOM MODULE IS EXECUTED!!!!!!");
     }
 
     @Override
     public void receive(Message message) {
-        for (int i = 0; i == 100; i++){
-            System.out.println("Printing message #" + i);
-        }
+
+        System.out.println("MY Module received : " + new String(message.getContent()));
+
     }
 
     @Override
